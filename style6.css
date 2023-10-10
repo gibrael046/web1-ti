@@ -15,6 +15,7 @@
     background-color: lightcoral;
 }
 #main {
+    padding: 20px;
     width: 75%;
     float: right;
     background-color: lightpink;
@@ -24,4 +25,14 @@
     text-align: center;
     clear: both;
     background-color: lightgoldenrodyellow;
+}
+li {
+    padding: 10px;
+}
+li:hover {
+    font-weight: bold;
+    background-color: brown;
+}
+h2 {
+    margin-bottom: 10px;
 }
