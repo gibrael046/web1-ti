@@ -1,0 +1,75 @@
+`<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator </title>
+    <style>
+        div {
+            display: flex;
+        }
+
+        div p {
+            margin-right: 5px;
+         }
+         
+        #result {
+            width: 200px;
+            height: 20px;
+            border: 1px solid black;
+         }
+    </style>
+</head>
+<body>
+    <h1>Calculator</h1>
+
+    
+        <br><br>
+        Input A : <input type="text" id="inputA">
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="/">/</option>
+            <option value="*">*</option>
+            <option value="%">%</option>
+        </select>
+        Input B : <input type="text" id="inputB"><button onclick="display()">Calculate</button>
+        <div>
+            <p>Result :</p>
+            <p id="result"></p>
+        </div>
+
+    <script>
+        function display() {
+            let a = parseFloat(document.getElementById("inputA").value);
+            let b = parseFloat(document.getElementById("inputB").value);
+            let operator = document.getElementById("operator").value;
+
+            if (!isNaN(a) && !isNaN(b)) {
+                let result;
+                if (operator === "+") {
+                    result = a + b;
+                } else if (operator === "-") {
+                    result = a - b;
+                } else if (operator === "/") {
+                    if (b !== 0) {
+                        result = a / b;
+                    } else {
+                        result = "Division by zero is not allowed.";
+                    }
+                } else if (operator === "*") {
+                    result = a * b;
+                } else if (operator === "%") {
+                    result = a % b;
+                } else {
+                    result = "Invalid operator";
+                }
+
+                document.getElementById("result").textContent = result ;
+            } else {
+                document.getElementById("result").textContent = "Invalid input. Please enter numbers.";
+            }
+        }
+    </script>
+</body>
+</html>
