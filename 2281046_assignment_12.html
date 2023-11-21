@@ -31,7 +31,6 @@
             <option value="-">-</option>
             <option value="/">/</option>
             <option value="*">*</option>
-            <option value="%">%</option>
         </select>
         Input B : <input type="text" id="inputB"><button onclick="display()">Calculate</button>
         <div>
@@ -59,8 +58,6 @@
                     }
                 } else if (operator === "*") {
                     result = a * b;
-                } else if (operator === "%") {
-                    result = a % b;
                 } else {
                     result = "Invalid operator";
                 }

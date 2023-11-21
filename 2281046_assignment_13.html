@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn about Events</title>
+</head>
+<body onload="showMessage()">
+    <h1>Learn about Events</h1>
+
+    <button onmouseover="showTime()">Waktunya adalah</button>
+    <p id="demo"></p>
+
+    <button onkeydown="showAlert()">KLIK!</button>
+
+    <script>
+        function showMessage() {
+            alert('Halaman Penuh!');
+        }
+
+        function showTime() {
+            document.getElementById('demo').innerHTML = Date();
+        }
+
+        function showAlert() {
+            alert('Key released! ');
+        }
+    </script>
+</body>
+</html>

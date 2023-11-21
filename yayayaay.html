@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Events Demo</title>
+</head>
+<body>
+
+<!-- 1. Click Event -->
+<button id="clickButton">Click me</button>
+
+<!-- 2. Mouseover Event -->
+<div id="mouseOverDiv" style="width: 200px; height: 100px; background-color: lightblue;"></div>
+
+<!-- 3. Keydown Event -->
+<input type="text" id="keyInput" placeholder="Type something">
+
+<!-- 4. Change Event -->
+<select id="changeSelect">
+    <option value="option1">Option 1</option>
+    <option value="option2">Option 2</option>
+</select>
+
+<!-- 5. Submit Event -->
+<form id="submitForm">
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    // 1. Click Event
+    document.getElementById('clickButton').onclick = function() {
+        alert('Button clicked!');
+    };
+
+    // 2. Mouseover Event
+    document.getElementById('mouseOverDiv').onmouseover = function() {
+        this.style.backgroundColor = 'lightcoral';
+    };
+
+    // 3. Keydown Event
+    document.getElementById('keyInput').onkeydown = function(event) {
+        console.log('Key pressed:', event.key);
+    };
+
+    // 4. Change Event
+    document.getElementById('changeSelect').onchange = function() {
+        alert('Select value changed to: ' + this.value);
+    };
+
+    // 5. Submit Event
+    document.getElementById('submitForm').onsubmit = function(event) {
+        event.preventDefault();
+        alert('Form submitted!');
+    };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script>
+        function validasi() {
+            let full_name = document.forms["myForm"]["full_name"].value;
+            let email = document.forms["myForm"]["email"].value;
+            let username = document.forms["myForm"]["username"].value;
+            let password = document.forms["myForm"]["password"].value;
+            let gender = document.querySelector('input[name="gender"]:checked');
+            let religion = document.forms["myForm"]["religion"].value;
+            let address = document.forms["myForm"]["address"].value;
+            let hobbies = document.querySelectorAll('input[name="hobbies"]:checked');
+
+            if (full_name === "") {
+                alert("Name must be filled out");
+                return false;
+            }
+
+            if (email === "") {
+                alert("E-mail must be filled out");
+                return false;
+            }
+
+            if (username === "") {
+                alert("Username must be filled out");
+                return false;
+            }
+
+            if (password === "") {
+                alert("Password must be filled out");
+                return false;
+            }
+
+            if (!gender) {
+                alert("Gender must be selected");
+                return false;
+            }
+
+            if (religion === "") {
+                alert("Religion must be filled out");
+                return false;
+            }
+
+            if (address === "") {
+                alert("Address must be filled out");
+                return false;
+            }
+
+            if (hobbies.length === 0) {
+                alert("At least one hobby must be selected");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+    <form name="myForm" onsubmit="return validasi()" action="#" method="post">
+        <div class="posisi">
+            <label for="full_name"><h3>Full Name :</h3></label>
+            <input type="text" id="full_name" name="full_name"><br><br>
+
+            <label for="email"><h3>E-mail :</h3></label>
+            <input type="email" id="email" name="email"><br><br>
+
+            <label for="username"><h3>Username :</h3></label>
+            <input type="text" id="username" name="username"><br><br>
+
+            <label for="password"><h3>Password :</h3></label>
+            <input type="password" id="password" name="password"><br><br>
+
+            <label><h3>Gender :</h3></label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br><br>
+
+            <label for="religion"><h3>Religion :</h3></label>
+            <select id="religion" name="religion">
+                <option value="Islam">Islam</option>
+                <option value="Christianity (Protestant and Catholic)">Christianity (Protestant and Catholic)
+                </option>
+                <option value="Hinduism">Hinduism</option>
+                <option value="buddhism">Buddhism</option>
+                <option value="Confucianism">Confucianism</option>
+            </select><br><br>
+
+            <label for="address"><h3>Address :</h3></label><br>
+            <textarea id="address" name="address" rows="4" cols="50"></textarea><br><br>
+
+            <label><h3>Hobbies :</h3></label>
+            <input type="checkbox" id="hiking" name="hobbies" value="hiking">
+            <label for="hiking">Hiking</label>
+            <input type="checkbox" id="sports" name="hobbies" value="sports">
+            <label for="sports">Sports</label>
+            <input type="checkbox" id="music" name="hobbies" value="music">
+            <label for="music">Music</label>
+            <input type="checkbox" id="swimming" name="hobbies" value="swimming">
+            <label for="swimming">Swimming</label>
+            <input type="checkbox" id="traveling" name="hobbies" value="traveling">
+            <label for="traveling">Traveling</label>
+            <input type="checkbox" id="riding" name="hobbies" value="riding">
+            <label for="riding">Riding</label><br><br>
+
+            <input type="submit" value="SAVE">
+        </div>
+    </form>
+
+</body>
+
+</html>
